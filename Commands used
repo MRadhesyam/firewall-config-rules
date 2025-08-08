@@ -1,0 +1,11 @@
+```bash
+sudo ufw enable
+sudo ufw status verbose
+sudo ufw deny 23
+sudo ufw allow 22
+nc -lvp 23       
+  # Start fake Telnet server
+    telnet 127.0.0.1 23 
+  # Test connection (should fail)
+    sudo ufw delete deny 23
+    sudo ufw status numbered
